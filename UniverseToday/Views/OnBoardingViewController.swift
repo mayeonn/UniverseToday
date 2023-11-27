@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import ExpandableLabel
 
 class OnBoardingViewController: UIViewController {
 

@@ -19,25 +19,28 @@ class NewsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure() {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        site.text = nil
+        title.text = nil
+    }
+    
+    
+    private func configure() {
         contentView.addSubview(site)
         site.snp.makeConstraints { make in
-            make.top.left.right.equalTo(contentView).inset(12)
+            make.top.equalTo(contentView).inset(12)
+            make.left.right.equalTo(contentView).inset(20)
         }
         contentView.addSubview(title)
         title.snp.makeConstraints { make in
             make.top.equalTo(site.snp.bottom).offset(4)
-            make.left.right.equalTo(contentView).inset(16)
+            make.left.right.equalTo(contentView).inset(28)
             make.bottom.equalTo(contentView).inset(12)
         }
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        site.text = "nil"
-        title.text = "nil"
-//        self.setNeedsLayout()
-    }
+    
     
     let site: UILabel = {
         let label = UILabel()
@@ -51,6 +54,7 @@ class NewsCell: UITableViewCell {
         label.numberOfLines = 0
         label.lineBreakMode = .byClipping
         label.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 16.0)
+        label.isUserInteractionEnabled = true
         return label
     }()
 }

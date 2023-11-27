@@ -56,15 +56,14 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    //MARK: - section and header
     func numberOfSections(in tableView: UITableView) -> Int {
         userCategories = categoryManager.getUserCategory()
         return userCategories.count
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userCategories[section]==2 ? 5 : 1
     }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeCategoryHeader.id) as! HomeCategoryHeader
         let categoryId = userCategories[section]
@@ -74,10 +73,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return header
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
+
+    //MARK: - custom cell according to the category id
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         let categoryId = userCategories[indexPath.section]
@@ -90,6 +87,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 let post = newsManager.news[indexPath.row]
                 postCell.title.text = post.title
                 postCell.site.text = post.news_site
+                
+                let clickNews = CustomTapGesture(target: self, action: #selector(pushNewsDetail(gesture:)))
+                clickNews.url = post.url
+                postCell.title.addGestureRecognizer(clickNews)
+                
                 return postCell
             }
             cell = postCell
@@ -101,6 +103,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    @objc func pushNewsDetail(gesture: CustomTapGesture) {
+        if let url = gesture.url {
+            navigationController?.pushViewController(NewsDetailViewController(newsUrl: url), animated: false)
+        }
+    }
+    
+    //MARK: - height of header and cell
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -108,7 +120,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return 120
     }
     
-    
+    //MARK: - footer (edit button)
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeCategoryFooter.id) as! HomeCategoryFooter
         footer.editButton.addTarget(self, action: #selector(editButtonPressed), for: .touchUpInside)
@@ -163,4 +175,10 @@ extension HomeViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+}
+
+
+//MARK: - custom UITapGestureRecognizer to send news url
+class CustomTapGesture: UITapGestureRecognizer {
+    var url: String?
 }

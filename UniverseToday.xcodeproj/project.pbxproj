@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D7C1F7FC2602722F9FC68DF /* Pods_UniverseToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88C61EEEE070921F9EC9194 /* Pods_UniverseToday.framework */; };
+		D71BCCB62B14F33300F7E311 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71BCCB52B14F33300F7E311 /* NewsDetailViewController.swift */; };
 		D72AA2802B06B42E00E56289 /* APODmodel+data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72AA27F2B06B42E00E56289 /* APODmodel+data.swift */; };
 		D797201E2B01F25000494DF1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797201D2B01F25000494DF1 /* Category.swift */; };
 		D79720202B01F7CA00494DF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797201F2B01F7CA00494DF1 /* Constants.swift */; };
@@ -38,6 +39,7 @@
 		9C4B2FBC26CBF4B764374940 /* Pods-UniverseToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniverseToday.debug.xcconfig"; path = "Target Support Files/Pods-UniverseToday/Pods-UniverseToday.debug.xcconfig"; sourceTree = "<group>"; };
 		B0DFB7C25DC9D49D63AD423D /* Pods-UniverseToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniverseToday.release.xcconfig"; path = "Target Support Files/Pods-UniverseToday/Pods-UniverseToday.release.xcconfig"; sourceTree = "<group>"; };
 		C4F2E4A75E1F86EA092DA08C /* Pods-Universe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Universe.debug.xcconfig"; path = "Target Support Files/Pods-Universe/Pods-Universe.debug.xcconfig"; sourceTree = "<group>"; };
+		D71BCCB52B14F33300F7E311 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		D72AA27F2B06B42E00E56289 /* APODmodel+data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APODmodel+data.swift"; sourceTree = "<group>"; };
 		D797201D2B01F25000494DF1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D797201F2B01F7CA00494DF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				D79720252B028E7E00494DF1 /* EditCategoryCell.swift */,
 				D7F813AD2B04AA90007618E2 /* HomeCategoryHeader.swift */,
 				D7CD4F0E2B13D66C00365698 /* HomeCategoryFooter.swift */,
+				D71BCCB52B14F33300F7E311 /* NewsDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				D79720242B02729B00494DF1 /* CategoryManager.swift in Sources */,
 				D797201E2B01F25000494DF1 /* Category.swift in Sources */,
 				D7A9D6E62B0BD79A003CC406 /* APODmanager.swift in Sources */,
+				D71BCCB62B14F33300F7E311 /* NewsDetailViewController.swift in Sources */,
 				D79720262B028E7E00494DF1 /* EditCategoryCell.swift in Sources */,
 				D7FED04E2AFF624F0077E8D5 /* AppDelegate.swift in Sources */,
 				D7CD4F032B1066C000365698 /* ApodCell.swift in Sources */,
