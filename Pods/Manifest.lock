@@ -1,0 +1,20 @@
+PODS:
+  - ExpandableLabel (0.5.2)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - ExpandableLabel
+  - SnapKit (~> 5.6.0)
+
+SPEC REPOS:
+  trunk:
+    - ExpandableLabel
+    - SnapKit
+
+SPEC CHECKSUMS:
+  ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: a26f6568ab833941e694ce15e4a9ada55d5e4f75
+
+COCOAPODS: 1.14.2
