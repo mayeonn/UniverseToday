@@ -12,34 +12,34 @@ struct Category: Identifiable {
     var title: String {
         switch id {
         case 1:
-            return "APOD"
+            return K.Category.APOD
         case 2:
-            return "News"
+            return K.Category.News
         case 3:
-            return "Launch"
+            return K.Category.Launch
         case 4:
-            return "Quotes"
+            return K.Category.Quotes
         case 5:
-            return "Music"
+            return K.Category.Music
         default:
-            return "APOD"
+            return K.Category.APOD
         }
     }
     
     var subTitle: String {
         switch id {
         case 1:
-            return "Astronomy picture of the Day"
+            return K.CategoryExplanation.APOD
         case 2:
-            return "Spaceflight News"
+            return K.CategoryExplanation.News
         case 3:
-            return "Orbital launches and a number of popular suborbital launches"
+            return K.CategoryExplanation.Launch
         case 4:
-            return "A"
+            return K.CategoryExplanation.Quotes
         case 5:
-            return "B"
+            return K.CategoryExplanation.Music
         default:
-            return "Astronomy picture of the Day"
+            return K.CategoryExplanation.APOD
         }
     }
 }
