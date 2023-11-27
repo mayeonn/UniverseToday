@@ -44,8 +44,8 @@ class HomeCategoryFooter: UITableViewHeaderFooterView {
         stackView.axis = .horizontal
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(contentView).inset(100)
-            make.bottom.left.right.equalTo(contentView).inset(32)
+            make.top.bottom.equalTo(contentView).offset(28)
+            make.left.right.equalTo(contentView).inset(20)
         }
     }
 }

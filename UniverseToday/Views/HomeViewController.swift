@@ -133,7 +133,7 @@ extension HomeViewController: CategoryManagerDelegate {
 
 
 extension HomeViewController {
-    // update tableview cell's height
+    // update tableview cell's height after apod loaded
     @objc func loaded() {
         DispatchQueue.main.async {
             self.tableView.beginUpdates()
@@ -142,6 +142,7 @@ extension HomeViewController {
     }
 }
 extension HomeViewController: NewsManagerDelegate {
+    // reload news section
     func newsLoaded() {
         if let newsSection = userCategories.firstIndex(of: 2) {
             DispatchQueue.main.async {
