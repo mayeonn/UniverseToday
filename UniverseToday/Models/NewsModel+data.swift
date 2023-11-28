@@ -11,8 +11,7 @@ struct NewsData: Decodable {
     let results: [NewsModel]
 }
 
-struct NewsModel: Decodable, Identifiable {
-    var id: Int
+struct NewsModel: Decodable {
     let title: String
     let url: String?
     let news_site: String

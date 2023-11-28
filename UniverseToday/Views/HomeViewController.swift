@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     var categoryManager = CategoryManager.singletonCategoryManager
     var userCategories: [Int] = []
     let newsManager = NewsManager()
+    let launchManager = LaunchManager()
 
     private lazy var tableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
@@ -22,12 +23,24 @@ class HomeViewController: UIViewController {
         categoryManager.delegate = self
         registerTableViewCell()
         setupTableView()
-        newsManager.performRequest()
-        newsManager.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(loaded), name: NSNotification.Name(K.loaded), object: nil)
+        setupManagerOfCell()
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func setupManagerOfCell() {
+        if userCategories.contains(1){
+            NotificationCenter.default.addObserver(self, selector: #selector(loaded), name: NSNotification.Name(K.loaded), object: nil)
+        }
+        if userCategories.contains(2){
+            newsManager.delegate = self
+            newsManager.performRequest()
+        }
+        if userCategories.contains(3){
+            launchManager.delegate = self
+            launchManager.performRequest()
+        }
     }
     
     private func registerTableViewCell() {
@@ -62,7 +75,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return userCategories.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userCategories[section]==2 ? 5 : 1
+        let categoryId = userCategories[section]
+        switch categoryId {
+        case 2: //news
+            return 5
+        case 3: //launch
+            return 3
+        default:
+            return 1
+        }
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeCategoryHeader.id) as! HomeCategoryHeader
@@ -96,7 +117,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             }
             cell = postCell
         case 3:
-            cell = tableView.dequeueReusableCell(withIdentifier: LaunchCell.id, for: indexPath) as! LaunchCell
+            let launchCell = tableView.dequeueReusableCell(withIdentifier: LaunchCell.id, for: indexPath) as! LaunchCell
+            guard launchManager.launches.isEmpty else {
+                let launch: LaunchModel = launchManager.launches[indexPath.row]
+                launchCell.rocketName.text = launch.rocketName
+                launchCell.image.load(urlString: launch.image)
+                
+                return launchCell
+            }
+            cell = launchCell
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: QuotesMusicCell.id, for: indexPath) as! QuotesMusicCell
         }
@@ -137,8 +166,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: CategoryManagerDelegate {
     func didUpdateCategory(_ categoryManager: CategoryManager) {
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.setupManagerOfCell()
         }
     }
 }
@@ -153,15 +184,23 @@ extension HomeViewController {
         }
     }
 }
-extension HomeViewController: NewsManagerDelegate {
-    // reload news section
-    func newsLoaded() {
+extension HomeViewController: NewsManagerDelegate, LaunchManagerDelegate {
+    func newsLoaded() { // reload news section
         if let newsSection = userCategories.firstIndex(of: 2) {
-            DispatchQueue.main.async {
-                self.tableView.reloadSections(IndexSet(newsSection...newsSection), with: .automatic)
-            }
+            reloadSection(newsSection)
         }
-        
+    }
+    
+    func launchLoaded() {   // reload launch section
+        if let launchSection = userCategories.firstIndex(of: 3) {
+            reloadSection(launchSection)
+        }
+    }
+    
+    private func reloadSection(_ section: Int){
+        DispatchQueue.main.async {
+            self.tableView.reloadSections(IndexSet(section...section), with: .automatic)
+        }
     }
 }
 
