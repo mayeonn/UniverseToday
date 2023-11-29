@@ -10,7 +10,7 @@ import UIKit
 class BoldLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 16.0)
+        self.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 18.0)
     }
     
     required init?(coder: NSCoder) {
