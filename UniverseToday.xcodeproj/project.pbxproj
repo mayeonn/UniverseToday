@@ -18,6 +18,7 @@
 		D79720242B02729B00494DF1 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79720232B02729B00494DF1 /* CategoryManager.swift */; };
 		D79720262B028E7E00494DF1 /* EditCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79720252B028E7E00494DF1 /* EditCategoryCell.swift */; };
 		D7A9D6E62B0BD79A003CC406 /* APODmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9D6E52B0BD79A003CC406 /* APODmanager.swift */; };
+		D7BBD81C2B17B0FE00FC48D1 /* ReusableLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD81B2B17B0FE00FC48D1 /* ReusableLabels.swift */; };
 		D7CD4EF62B0CBC8300365698 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD4EF52B0CBC8300365698 /* NewsManager.swift */; };
 		D7CD4EF82B0CBDAD00365698 /* NewsModel+data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD4EF72B0CBDAD00365698 /* NewsModel+data.swift */; };
 		D7CD4F032B1066C000365698 /* ApodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD4F022B1066C000365698 /* ApodCell.swift */; };
@@ -51,6 +52,7 @@
 		D79720232B02729B00494DF1 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		D79720252B028E7E00494DF1 /* EditCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryCell.swift; sourceTree = "<group>"; };
 		D7A9D6E52B0BD79A003CC406 /* APODmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODmanager.swift; sourceTree = "<group>"; };
+		D7BBD81B2B17B0FE00FC48D1 /* ReusableLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabels.swift; sourceTree = "<group>"; };
 		D7CD4EF52B0CBC8300365698 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
 		D7CD4EF72B0CBDAD00365698 /* NewsModel+data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsModel+data.swift"; sourceTree = "<group>"; };
 		D7CD4F022B1066C000365698 /* ApodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodCell.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				D7F813AD2B04AA90007618E2 /* HomeCategoryHeader.swift */,
 				D7CD4F0E2B13D66C00365698 /* HomeCategoryFooter.swift */,
 				D71BCCB52B14F33300F7E311 /* NewsDetailViewController.swift */,
+				D7BBD81B2B17B0FE00FC48D1 /* ReusableLabels.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				D71BCCB62B14F33300F7E311 /* NewsDetailViewController.swift in Sources */,
 				D79720262B028E7E00494DF1 /* EditCategoryCell.swift in Sources */,
 				D7FED04E2AFF624F0077E8D5 /* AppDelegate.swift in Sources */,
+				D7BBD81C2B17B0FE00FC48D1 /* ReusableLabels.swift in Sources */,
 				D7CD4F032B1066C000365698 /* ApodCell.swift in Sources */,
 				D7CD4EF82B0CBDAD00365698 /* NewsModel+data.swift in Sources */,
 				D7CD4F072B1067BA00365698 /* LaunchCell.swift in Sources */,

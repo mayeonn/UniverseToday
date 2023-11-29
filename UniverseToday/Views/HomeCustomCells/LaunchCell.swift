@@ -12,7 +12,6 @@ class LaunchCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -21,36 +20,39 @@ class LaunchCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        rocketName.text = nil
     }
     
-    private func configure() {
-        image.snp.makeConstraints { make in
-            make.height.equalTo(120)
-            make.width.equalTo(120)
-        }
-        contentView.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
+    func configure(_ launch: LaunchModel) {
+        rocketImage.load(urlString: launch.image)
+        rocketName.text = launch.rocketName
+        
+        contentView.addSubview(stackViewA)
+        stackViewA.snp.makeConstraints { make in
             make.edges.equalTo(contentView).inset(8)
         }
+        
+        rocketImage.snp.makeConstraints { make in
+            make.width.height.equalTo(stackViewA.snp.width).multipliedBy(0.4)
+        }
     }
     
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [image, rocketName])
+    lazy var stackViewA: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [rocketImage, rocketName])
         stack.axis = .horizontal
         stack.spacing = 20
         return stack
     }()
+    lazy var stackViewB: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        return stack
+    }()
     
-    let image: UIImageView = {
+    let rocketImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleToFill
         return image
     }()
+    let rocketName = BoldLabel()
     
-    let rocketName: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 16.0)
-        return label
-    }()
 }

@@ -14,14 +14,9 @@ class APODmanager {
         image.contentMode = .scaleAspectFit
         return image
     }()
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 16.0)
-        return label
-    }()
-    let explanationLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoRegular, size: 14.0)
+    let titleLabel = BoldLabel()
+    let explanationLabel: SmallLabel = {
+        let label = SmallLabel()
         label.textColor = .darkGray
         label.numberOfLines = 3
         label.lineBreakMode = .byTruncatingTail
@@ -39,7 +34,7 @@ class APODmanager {
                         
                         DispatchQueue.main.async {
                             self.imageView.snp.makeConstraints { make in
-                                make.height.equalTo(imageWidth * ratio).priority(999)
+                                make.height.equalTo(imageWidth * ratio).priority(.high)
                             }
                             
                             self.titleLabel.text = apod.title

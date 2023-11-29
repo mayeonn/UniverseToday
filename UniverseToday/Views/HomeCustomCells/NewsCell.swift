@@ -42,18 +42,15 @@ class NewsCell: UITableViewCell {
     
     
     
-    let site: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
+    let site: SmallLabel = {
+        let label = SmallLabel()
         label.backgroundColor = .systemGray5
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoRegular, size: 14.0)
         return label
     }()
-    let title: UILabel = {
-        let label = UILabel()
+    let title: BoldLabel = {
+        let label = BoldLabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byClipping
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 16.0)
         label.isUserInteractionEnabled = true
         return label
     }()

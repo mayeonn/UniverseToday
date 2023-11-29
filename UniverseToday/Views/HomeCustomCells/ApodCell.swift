@@ -43,7 +43,7 @@ class ApodCell: UITableViewCell {
         let stack = UIStackView(arrangedSubviews: [apodManager.imageView, apodManager.titleLabel, apodManager.explanationLabel])
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 20
+        stack.spacing = 12
         return stack
     }()
     

@@ -22,12 +22,10 @@ class HomeCategoryFooter: UITableViewHeaderFooterView {
         super.prepareForReuse()
     }
 
-    let phrase: UILabel = {
-        let label = UILabel()
+    let phrase: RegularLabel = {
+        let label = RegularLabel()
         label.text = K.editCategoryPhrase
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoRegular, size: 16.0)
         label.textColor = .gray
-        label.numberOfLines = 0
         return label
     }()
     let editButton: UIButton = {

@@ -24,16 +24,13 @@ class HomeCategoryHeader: UITableViewHeaderFooterView {
         subTitle.text = nil
     }
 
-    let title: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoBold, size: 28.0)
-        label.numberOfLines = 0
+    let title: BoldLabel = {
+        let label = BoldLabel()
+        label.font = label.font.withSize(28)
         return label
     }()
-    let subTitle: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: K.Fonts.NanumMyeongjoRegular, size: 16.0)
-        label.numberOfLines = 0
+    let subTitle: RegularLabel = {
+        let label = RegularLabel()
         return label
     }()
     

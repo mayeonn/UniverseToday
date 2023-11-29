@@ -120,8 +120,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let launchCell = tableView.dequeueReusableCell(withIdentifier: LaunchCell.id, for: indexPath) as! LaunchCell
             guard launchManager.launches.isEmpty else {
                 let launch: LaunchModel = launchManager.launches[indexPath.row]
-                launchCell.rocketName.text = launch.rocketName
-                launchCell.image.load(urlString: launch.image)
+                launchCell.configure(launch)
                 
                 return launchCell
             }
