@@ -122,9 +122,7 @@ extension EditCategoryViewController: EditCategoryCellDelegate {
     
     func deleteCategory(_ id: Int) {
         userCategories.removeAll(where: {$0 == id})
-        leftCategories.append(id)
+        leftCategories.insert(id, at: 0)
         tableView.reloadData()
     }
-    
-    
 }
