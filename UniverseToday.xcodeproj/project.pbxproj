@@ -94,6 +94,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D77AF6752B20371000CFC6CF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7FED0512AFF624F0077E8D5 /* OnBoardingViewController.swift */,
+				D7FED0612AFF75C90077E8D5 /* HomeViewController.swift */,
+				D79720212B022C4100494DF1 /* EditCategoryViewController.swift */,
+				D71BCCB52B14F33300F7E311 /* NewsDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D797201C2B01F23800494DF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +161,7 @@
 		D7FED04C2AFF624F0077E8D5 /* UniverseToday */ = {
 			isa = PBXGroup;
 			children = (
+				D77AF6752B20371000CFC6CF /* Controllers */,
 				D7F813AF2B04AFB0007618E2 /* Fonts */,
 				D797201C2B01F23800494DF1 /* Models */,
 				D7FED04D2AFF624F0077E8D5 /* AppDelegate.swift */,
@@ -167,13 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				D7CD4F012B1066A100365698 /* HomeCustomCells */,
-				D7FED0512AFF624F0077E8D5 /* OnBoardingViewController.swift */,
-				D7FED0612AFF75C90077E8D5 /* HomeViewController.swift */,
-				D79720212B022C4100494DF1 /* EditCategoryViewController.swift */,
 				D79720252B028E7E00494DF1 /* EditCategoryCell.swift */,
 				D7F813AD2B04AA90007618E2 /* HomeCategoryHeader.swift */,
 				D7CD4F0E2B13D66C00365698 /* HomeCategoryFooter.swift */,
-				D71BCCB52B14F33300F7E311 /* NewsDetailViewController.swift */,
 				D7BBD81B2B17B0FE00FC48D1 /* ReusableLabels.swift */,
 			);
 			path = Views;
